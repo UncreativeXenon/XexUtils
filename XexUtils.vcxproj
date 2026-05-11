@@ -68,9 +68,11 @@
     <ClInclude Include="src\Assert.h" />
     <ClInclude Include="src\Dashlaunch.h" />
     <ClInclude Include="src\Detour.h" />
+    <ClInclude Include="src\Expected.h" />
     <ClInclude Include="src\Filesystem.h" />
     <ClInclude Include="src\Formatter.h" />
     <ClInclude Include="src\General.h" />
+    <ClInclude Include="src\Http.h" />
     <ClInclude Include="src\Hypervisor.h" />
     <ClInclude Include="src\Input.h" />
     <ClInclude Include="src\Kernel.h" />
@@ -81,6 +83,7 @@
     <ClInclude Include="src\Socket.h" />
     <ClInclude Include="src\SystemSocket.h" />
     <ClInclude Include="src\TlsSession.h" />
+    <ClInclude Include="src\Url.h" />
     <ClInclude Include="src\ValueOrPtr.h" />
     <ClInclude Include="src\Vec2.h" />
     <ClInclude Include="src\Vec3.h" />
@@ -94,6 +97,7 @@
     <ClCompile Include="src\Filesystem.cpp" />
     <ClCompile Include="src\Formatter.cpp" />
     <ClCompile Include="src\General.cpp" />
+    <ClCompile Include="src\Http.cpp" />
     <ClCompile Include="src\Hypervisor.cpp" />
     <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\Log.cpp" />
@@ -101,6 +105,7 @@
     <ClCompile Include="src\SMC.cpp" />
     <ClCompile Include="src\Socket.cpp" />
     <ClCompile Include="src\TlsSession.cpp" />
+    <ClCompile Include="src\Url.cpp" />
     <ClCompile Include="src\Vec2.cpp" />
     <ClCompile Include="src\Vec3.cpp" />
     <ClCompile Include="src\Vec4.cpp" />

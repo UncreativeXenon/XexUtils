@@ -1,15 +1,19 @@
 #pragma once
 
+#include <functional>
+#include <sstream>
+#include <string>
+
 namespace TestRunner
 {
 
-typedef std::function<void()> TestFunction;
-
 void Describe(const std::string &sectionName);
 
-void It(const std::string &testName, TestFunction testFunction);
+void It(const std::string &testName, std::function<void()> testFunction);
 
-void Run();
+void Start();
+
+void End();
 
 void PushError(const std::string &errorMessage);
 

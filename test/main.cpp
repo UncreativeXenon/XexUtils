@@ -1,23 +1,67 @@
-#include "pch.h"
+#include <xtl.h>
 
-#include "Console.h"
-#include "specs.h"
+#include "TestRunner.h"
 
-Console g_Console;
+void Detour();
+void Expected();
+void Filesystem();
+void Formatter();
+void General();
+void Http();
+void Vec2();
+void Vec3();
+void Vec4();
+void Math();
+void Memory();
+void Optional();
+void Socket();
+void Url();
+void ValueOrPtr();
 
 void __cdecl main()
 {
-    HRESULT hr = g_Console.Create();
+    DWORD ethernetStatus = XNetGetEthernetLinkStatus();
+    bool isConnectedToTheInternet =
+        ethernetStatus & XNET_ETHERNET_LINK_ACTIVE ||
+        ethernetStatus & XNET_ETHERNET_LINK_WIRELESS;
 
-    if (FAILED(hr))
-        ATG::FatalError("Failed to create console: %x\n", hr);
+    TestRunner::Start();
 
-    RunTests();
+#ifndef NDEBUG
+    // We stop trying to run detour tests in release builds because compiler optimizations
+    // and CPU caches make this a nightmare
+    Detour();
+#endif
 
-    for (;;)
-    {
-        g_Console.Update();
+    Expected();
 
-        g_Console.Render();
-    }
+    Filesystem();
+
+    Formatter();
+
+    General();
+
+    if (isConnectedToTheInternet)
+        Http();
+
+    Vec2();
+
+    Vec3();
+
+    Vec4();
+
+    Math();
+
+    Memory();
+
+    Optional();
+
+    if (isConnectedToTheInternet)
+        Socket();
+
+    Url();
+
+    ValueOrPtr();
+
+    TestRunner::End();
 }
